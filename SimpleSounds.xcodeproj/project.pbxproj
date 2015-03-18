@@ -1,0 +1,518 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D4995F271AAB9A4E00B1B0EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4995F261AAB9A4E00B1B0EB /* main.m */; };
+		D4995F2A1AAB9A4E00B1B0EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4995F291AAB9A4E00B1B0EB /* AppDelegate.m */; };
+		D4995F2D1AAB9A4E00B1B0EB /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D4995F2C1AAB9A4E00B1B0EB /* GameScene.m */; };
+		D4995F321AAB9A4E00B1B0EB /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4995F311AAB9A4E00B1B0EB /* GameViewController.m */; };
+		D4995F351AAB9A4E00B1B0EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4995F331AAB9A4E00B1B0EB /* Main.storyboard */; };
+		D4995F371AAB9A4E00B1B0EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4995F361AAB9A4E00B1B0EB /* Images.xcassets */; };
+		D4995F3A1AAB9A4E00B1B0EB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4995F381AAB9A4E00B1B0EB /* LaunchScreen.xib */; };
+		D4995F461AAB9A4F00B1B0EB /* SimpleSoundPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4995F451AAB9A4F00B1B0EB /* SimpleSoundPlayerTests.m */; };
+		D4995F521AAB9CCB00B1B0EB /* SimpleSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4995F511AAB9CCB00B1B0EB /* SimpleSoundPlayer.m */; };
+		D4995F581AABAF3700B1B0EB /* SoundFile.m in Sources */ = {isa = PBXBuildFile; fileRef = D4995F571AABAF3700B1B0EB /* SoundFile.m */; };
+		D4995F5F1AABBCF600B1B0EB /* Effect.sks in Resources */ = {isa = PBXBuildFile; fileRef = D4995F5D1AABBCF600B1B0EB /* Effect.sks */; };
+		D4995F601AABBCF600B1B0EB /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = D4995F5E1AABBCF600B1B0EB /* spark.png */; };
+		D4995F651AABC94500B1B0EB /* OpenALSupport.c in Sources */ = {isa = PBXBuildFile; fileRef = D4995F641AABC94500B1B0EB /* OpenALSupport.c */; };
+		D4995F6C1AAC078800B1B0EB /* Blaster.caf in Resources */ = {isa = PBXBuildFile; fileRef = D4995F6B1AAC078800B1B0EB /* Blaster.caf */; };
+		D4CBD7111AB8F8A3008AFAED /* SKAction+SimpleSounds.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CBD7101AB8F8A3008AFAED /* SKAction+SimpleSounds.m */; };
+		D4EE3D801AB66CCA00E565A6 /* SoundObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EE3D7F1AB66CCA00E565A6 /* SoundObject.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4995F401AAB9A4F00B1B0EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4995F191AAB9A4E00B1B0EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4995F201AAB9A4E00B1B0EB;
+			remoteInfo = SimpleSounds;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D4995F211AAB9A4E00B1B0EB /* SimpleSounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSounds.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4995F251AAB9A4E00B1B0EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4995F261AAB9A4E00B1B0EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D4995F281AAB9A4E00B1B0EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D4995F291AAB9A4E00B1B0EB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D4995F2B1AAB9A4E00B1B0EB /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		D4995F2C1AAB9A4E00B1B0EB /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		D4995F301AAB9A4E00B1B0EB /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		D4995F311AAB9A4E00B1B0EB /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		D4995F341AAB9A4E00B1B0EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D4995F361AAB9A4E00B1B0EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D4995F391AAB9A4E00B1B0EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D4995F3F1AAB9A4F00B1B0EB /* SimpleSoundsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleSoundsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4995F441AAB9A4F00B1B0EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4995F451AAB9A4F00B1B0EB /* SimpleSoundPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleSoundPlayerTests.m; sourceTree = "<group>"; };
+		D4995F501AAB9CCB00B1B0EB /* SimpleSoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleSoundPlayer.h; sourceTree = "<group>"; };
+		D4995F511AAB9CCB00B1B0EB /* SimpleSoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleSoundPlayer.m; sourceTree = "<group>"; };
+		D4995F561AABAF3700B1B0EB /* SoundFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundFile.h; sourceTree = "<group>"; };
+		D4995F571AABAF3700B1B0EB /* SoundFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundFile.m; sourceTree = "<group>"; };
+		D4995F5D1AABBCF600B1B0EB /* Effect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Effect.sks; sourceTree = "<group>"; };
+		D4995F5E1AABBCF600B1B0EB /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		D4995F631AABC91200B1B0EB /* OpenALSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenALSupport.h; sourceTree = "<group>"; };
+		D4995F641AABC94500B1B0EB /* OpenALSupport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OpenALSupport.c; sourceTree = "<group>"; };
+		D4995F6B1AAC078800B1B0EB /* Blaster.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Blaster.caf; sourceTree = "<group>"; };
+		D4CBD70A1AB8E9B6008AFAED /* SimpleSoundTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleSoundTypes.h; sourceTree = "<group>"; };
+		D4CBD70B1AB8EC50008AFAED /* SimpleSound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleSound.h; sourceTree = "<group>"; };
+		D4CBD70F1AB8F8A3008AFAED /* SKAction+SimpleSounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKAction+SimpleSounds.h"; sourceTree = "<group>"; };
+		D4CBD7101AB8F8A3008AFAED /* SKAction+SimpleSounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKAction+SimpleSounds.m"; sourceTree = "<group>"; };
+		D4CBD7121AB8FA9C008AFAED /* SimpleSoundInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleSoundInternal.h; sourceTree = "<group>"; };
+		D4EE3D7E1AB66CCA00E565A6 /* SoundObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundObject.h; sourceTree = "<group>"; };
+		D4EE3D7F1AB66CCA00E565A6 /* SoundObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundObject.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4995F1E1AAB9A4E00B1B0EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4995F3C1AAB9A4F00B1B0EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D4995F181AAB9A4E00B1B0EB = {
+			isa = PBXGroup;
+			children = (
+				D4995F231AAB9A4E00B1B0EB /* SimpleSounds */,
+				D4995F421AAB9A4F00B1B0EB /* SimpleSoundsTests */,
+				D4995F221AAB9A4E00B1B0EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D4995F221AAB9A4E00B1B0EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4995F211AAB9A4E00B1B0EB /* SimpleSounds.app */,
+				D4995F3F1AAB9A4F00B1B0EB /* SimpleSoundsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4995F231AAB9A4E00B1B0EB /* SimpleSounds */ = {
+			isa = PBXGroup;
+			children = (
+				D4995F281AAB9A4E00B1B0EB /* AppDelegate.h */,
+				D4995F291AAB9A4E00B1B0EB /* AppDelegate.m */,
+				D4995F2B1AAB9A4E00B1B0EB /* GameScene.h */,
+				D4995F2C1AAB9A4E00B1B0EB /* GameScene.m */,
+				D4995F4F1AAB9C8200B1B0EB /* Sound Engine */,
+				D4995F301AAB9A4E00B1B0EB /* GameViewController.h */,
+				D4995F311AAB9A4E00B1B0EB /* GameViewController.m */,
+				D4995F5C1AABBC8C00B1B0EB /* Resources */,
+				D4995F331AAB9A4E00B1B0EB /* Main.storyboard */,
+				D4995F361AAB9A4E00B1B0EB /* Images.xcassets */,
+				D4995F381AAB9A4E00B1B0EB /* LaunchScreen.xib */,
+				D4995F241AAB9A4E00B1B0EB /* Supporting Files */,
+			);
+			path = SimpleSounds;
+			sourceTree = "<group>";
+		};
+		D4995F241AAB9A4E00B1B0EB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4995F251AAB9A4E00B1B0EB /* Info.plist */,
+				D4995F261AAB9A4E00B1B0EB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4995F421AAB9A4F00B1B0EB /* SimpleSoundsTests */ = {
+			isa = PBXGroup;
+			children = (
+				D4995F451AAB9A4F00B1B0EB /* SimpleSoundPlayerTests.m */,
+				D4995F431AAB9A4F00B1B0EB /* Supporting Files */,
+			);
+			path = SimpleSoundsTests;
+			sourceTree = "<group>";
+		};
+		D4995F431AAB9A4F00B1B0EB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4995F441AAB9A4F00B1B0EB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4995F4F1AAB9C8200B1B0EB /* Sound Engine */ = {
+			isa = PBXGroup;
+			children = (
+				D4CBD70B1AB8EC50008AFAED /* SimpleSound.h */,
+				D4CBD70A1AB8E9B6008AFAED /* SimpleSoundTypes.h */,
+				D4CBD7121AB8FA9C008AFAED /* SimpleSoundInternal.h */,
+				D4995F501AAB9CCB00B1B0EB /* SimpleSoundPlayer.h */,
+				D4995F511AAB9CCB00B1B0EB /* SimpleSoundPlayer.m */,
+				D4995F561AABAF3700B1B0EB /* SoundFile.h */,
+				D4995F571AABAF3700B1B0EB /* SoundFile.m */,
+				D4EE3D7E1AB66CCA00E565A6 /* SoundObject.h */,
+				D4EE3D7F1AB66CCA00E565A6 /* SoundObject.m */,
+				D4CBD70D1AB8F848008AFAED /* Utilities */,
+				D4CBD70C1AB8F81A008AFAED /* Support */,
+			);
+			name = "Sound Engine";
+			path = SoundEngine;
+			sourceTree = "<group>";
+		};
+		D4995F5C1AABBC8C00B1B0EB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4995F6B1AAC078800B1B0EB /* Blaster.caf */,
+				D4995F5D1AABBCF600B1B0EB /* Effect.sks */,
+				D4995F5E1AABBCF600B1B0EB /* spark.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D4CBD70C1AB8F81A008AFAED /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				D4995F631AABC91200B1B0EB /* OpenALSupport.h */,
+				D4995F641AABC94500B1B0EB /* OpenALSupport.c */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		D4CBD70D1AB8F848008AFAED /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D4CBD70F1AB8F8A3008AFAED /* SKAction+SimpleSounds.h */,
+				D4CBD7101AB8F8A3008AFAED /* SKAction+SimpleSounds.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4995F201AAB9A4E00B1B0EB /* SimpleSounds */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4995F491AAB9A4F00B1B0EB /* Build configuration list for PBXNativeTarget "SimpleSounds" */;
+			buildPhases = (
+				D4995F1D1AAB9A4E00B1B0EB /* Sources */,
+				D4995F1E1AAB9A4E00B1B0EB /* Frameworks */,
+				D4995F1F1AAB9A4E00B1B0EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleSounds;
+			productName = SimpleSounds;
+			productReference = D4995F211AAB9A4E00B1B0EB /* SimpleSounds.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D4995F3E1AAB9A4F00B1B0EB /* SimpleSoundsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4995F4C1AAB9A4F00B1B0EB /* Build configuration list for PBXNativeTarget "SimpleSoundsTests" */;
+			buildPhases = (
+				D4995F3B1AAB9A4F00B1B0EB /* Sources */,
+				D4995F3C1AAB9A4F00B1B0EB /* Frameworks */,
+				D4995F3D1AAB9A4F00B1B0EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4995F411AAB9A4F00B1B0EB /* PBXTargetDependency */,
+			);
+			name = SimpleSoundsTests;
+			productName = SimpleSoundsTests;
+			productReference = D4995F3F1AAB9A4F00B1B0EB /* SimpleSoundsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4995F191AAB9A4E00B1B0EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Rob Anderson";
+				TargetAttributes = {
+					D4995F201AAB9A4E00B1B0EB = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					D4995F3E1AAB9A4F00B1B0EB = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = D4995F201AAB9A4E00B1B0EB;
+					};
+				};
+			};
+			buildConfigurationList = D4995F1C1AAB9A4E00B1B0EB /* Build configuration list for PBXProject "SimpleSounds" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D4995F181AAB9A4E00B1B0EB;
+			productRefGroup = D4995F221AAB9A4E00B1B0EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4995F201AAB9A4E00B1B0EB /* SimpleSounds */,
+				D4995F3E1AAB9A4F00B1B0EB /* SimpleSoundsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4995F1F1AAB9A4E00B1B0EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4995F601AABBCF600B1B0EB /* spark.png in Resources */,
+				D4995F3A1AAB9A4E00B1B0EB /* LaunchScreen.xib in Resources */,
+				D4995F6C1AAC078800B1B0EB /* Blaster.caf in Resources */,
+				D4995F371AAB9A4E00B1B0EB /* Images.xcassets in Resources */,
+				D4995F5F1AABBCF600B1B0EB /* Effect.sks in Resources */,
+				D4995F351AAB9A4E00B1B0EB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4995F3D1AAB9A4F00B1B0EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4995F1D1AAB9A4E00B1B0EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4EE3D801AB66CCA00E565A6 /* SoundObject.m in Sources */,
+				D4995F321AAB9A4E00B1B0EB /* GameViewController.m in Sources */,
+				D4995F581AABAF3700B1B0EB /* SoundFile.m in Sources */,
+				D4995F2A1AAB9A4E00B1B0EB /* AppDelegate.m in Sources */,
+				D4995F2D1AAB9A4E00B1B0EB /* GameScene.m in Sources */,
+				D4CBD7111AB8F8A3008AFAED /* SKAction+SimpleSounds.m in Sources */,
+				D4995F651AABC94500B1B0EB /* OpenALSupport.c in Sources */,
+				D4995F521AAB9CCB00B1B0EB /* SimpleSoundPlayer.m in Sources */,
+				D4995F271AAB9A4E00B1B0EB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4995F3B1AAB9A4F00B1B0EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4995F461AAB9A4F00B1B0EB /* SimpleSoundPlayerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4995F411AAB9A4F00B1B0EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4995F201AAB9A4E00B1B0EB /* SimpleSounds */;
+			targetProxy = D4995F401AAB9A4F00B1B0EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D4995F331AAB9A4E00B1B0EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4995F341AAB9A4E00B1B0EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D4995F381AAB9A4E00B1B0EB /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4995F391AAB9A4E00B1B0EB /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D4995F471AAB9A4F00B1B0EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D4995F481AAB9A4F00B1B0EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D4995F4A1AAB9A4F00B1B0EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SimpleSounds/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D4995F4B1AAB9A4F00B1B0EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SimpleSounds/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D4995F4D1AAB9A4F00B1B0EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SimpleSoundsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleSounds.app/SimpleSounds";
+			};
+			name = Debug;
+		};
+		D4995F4E1AAB9A4F00B1B0EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SimpleSoundsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleSounds.app/SimpleSounds";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4995F1C1AAB9A4E00B1B0EB /* Build configuration list for PBXProject "SimpleSounds" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4995F471AAB9A4F00B1B0EB /* Debug */,
+				D4995F481AAB9A4F00B1B0EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4995F491AAB9A4F00B1B0EB /* Build configuration list for PBXNativeTarget "SimpleSounds" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4995F4A1AAB9A4F00B1B0EB /* Debug */,
+				D4995F4B1AAB9A4F00B1B0EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4995F4C1AAB9A4F00B1B0EB /* Build configuration list for PBXNativeTarget "SimpleSoundsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4995F4D1AAB9A4F00B1B0EB /* Debug */,
+				D4995F4E1AAB9A4F00B1B0EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D4995F191AAB9A4E00B1B0EB /* Project object */;
+}
