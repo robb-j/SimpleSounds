@@ -1,4 +1,4 @@
-# Another OpenAL Sound Framework
+# Another OpenAL Sound Framework (Work In Progress)
 - Rob Anderson
 - robb-j
 - March 2015
@@ -13,9 +13,8 @@
 
 ## Todo
 - Sound looping
-- Sound-music interaction 
+- Sound-music interaction
 - Unique track volumes
-- Some sort of music integration
 
 
 ## Instructions For Setup
@@ -34,7 +33,39 @@
 
 
 ## Usage
-### Something
+### Loading Sounds & Setup
+First we create a dictionary of all the sounds you will be playing. The key is the identifier you'll use to play the sound and the value is a SoundFile object.
+
+```
+NSDictionary *sounds = @{
+	@"Blaster" : [SoundFile effectWithName:@"Blaster"],
+};
+```
+
+Now we have the sounds we have to tell SimpleSounds to load them. You access the singleton player and tell it to load your sounds. You can also pass an optional block of code that will be run after everything is loaded. For example in a game you could have a loading view which loads the assets, so in the block you could load the next set of assets or move to the game view.
+
+```
+[[SimpleSoundPlayer sharedPlayer] loadSounds:sounds withCompletion:^{
+	
+	// Something when the sounds are loaded
+}];
+```
+
+Next we need to tell SimpleSounds which SKNode is listening to sounds, so all positional sounds will be played around this node. Here we set the target to a variable called `ship`. Once the above block has been called and the target is set, you can play sounds!
+
+```
+[[SimpleSoundPlayer sharedPlayer] setTarget:ship];
+```
+
+Optionally you can tweek the audible range property. This is the distance, in points, that your target SKNode can hear. Sounds played beyond that distance will not be heard. This could be useful if your character got in a vehicle they might need to be able to hear further that when they were just on foot.
+
+```
+[[SimpleSoundPlayer sharedPlayer] setAudibleRange:500.0f];
+```
+
+### Playing a sound
+
+### Playing a sound with position
 
 
 ## Tips

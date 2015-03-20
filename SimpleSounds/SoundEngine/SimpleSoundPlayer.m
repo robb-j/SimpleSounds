@@ -176,6 +176,10 @@ static SimpleSoundPlayer *_sharedInstance;
 	// Close down OpenAL
 	alcCloseDevice(_audioDevice);
 	alcDestroyContext(_audioContext);
+	
+	
+	// We are now un loaded
+	_isLoaded = NO;
 }
 
 
