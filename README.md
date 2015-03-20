@@ -8,13 +8,13 @@
 - Sounds don't cancel out iPod music
 - Play a sound multiple times at the same time (overlapping)
 - Simple to use singleton to play sounds
-- Integrates with SKActions to link with nodes and play in Action sequencss & groups
 - You don't have to do any low level C programming
 
-## Todo
+## Coming Soon
 - Sound looping
 - Sound-music interaction
 - Unique track volumes
+- Integration with SKActions to link with nodes and play in Action sequencss & groups
 
 
 ## Instructions For Setup
@@ -36,7 +36,7 @@
 ### Loading Sounds & Setup
 First we create a dictionary of all the sounds you will be playing. The key is the identifier you'll use to play the sound and the value is a SoundFile object.
 
-```
+```objc
 NSDictionary *sounds = @{
 	@"Blaster" : [SoundFile effectWithName:@"Blaster"],
 };
@@ -44,7 +44,7 @@ NSDictionary *sounds = @{
 
 Now we have the sounds we have to tell SimpleSounds to load them. You access the singleton player and tell it to load your sounds. You can also pass an optional block of code that will be run after everything is loaded. For example in a game you could have a loading view which loads the assets, so in the block you could load the next set of assets or move to the game view.
 
-```
+```objc
 [[SimpleSoundPlayer sharedPlayer] loadSounds:sounds withCompletion:^{
 	
 	// Something when the sounds are loaded
@@ -53,19 +53,49 @@ Now we have the sounds we have to tell SimpleSounds to load them. You access the
 
 Next we need to tell SimpleSounds which SKNode is listening to sounds, so all positional sounds will be played around this node. Here we set the target to a variable called `ship`. Once the above block has been called and the target is set, you can play sounds!
 
-```
+```objc
 [[SimpleSoundPlayer sharedPlayer] setTarget:ship];
 ```
 
 Optionally you can tweek the audible range property. This is the distance, in points, that your target SKNode can hear. Sounds played beyond that distance will not be heard. This could be useful if your character got in a vehicle they might need to be able to hear further that when they were just on foot.
 
-```
+```objc
 [[SimpleSoundPlayer sharedPlayer] setAudibleRange:500.0f];
 ```
 
-### Playing a sound
 
-### Playing a sound with position
+
+### Playing a sound
+Playing a sound is ... simple and you have a few ways of doing it!
+
+#### Just Playing a Sound
+This is the simplest way to play a sound:
+
+```objc
+[[SimpleSoundPlayer sharedPlayer] playSound:@"Blaster"];
+```
+#### Specify a Volume
+You can also just play a sound and specify how load you want it to be, where the volume is a float from 0.0 - 1.0
+
+```objc
+[[SimpleSoundPlayer sharedPlayer] playSound:@"Blaster" volume:0.7f];
+```
+
+#### Specify a Position
+You can tell SimpleSounds to play a sound at a specific position. The position should be in the same node-space as the target. For example if the target was at x:100 y:200 and you played a sound at x:300 y:200, then the sound would play asif its 200 pixels to the right of the target. Here's how to do it:
+
+```objc
+[[SimpleSoundPlayer sharedPlayer] playSound:@"Blaster" fromPosition:CGPointMake(300, 200)];
+```
+
+#### Waiting for completion
+Sometimes you want to know when your sound has finished playing, for example if the sound was dialog you'd want to know when they finished speaking so you can play the next bit. This can easily for be accomplished with these methods, where you replace ... with the code you want to be executed.
+
+```objc
+[[SimpleSoundPlayer sharedPlayer] playSound:@"Blaster" completion:^{ ... }];
+[[SimpleSoundPlayer sharedPlayer] playSound:@"Blaster" volume:0.7f completion:^{ ... }];
+[[SimpleSoundPlayer sharedPlayer] playSound:@"Blaster" fromPosition:CGPointMake(300, 200) completion:^{ ... }];
+```
 
 
 ## Tips

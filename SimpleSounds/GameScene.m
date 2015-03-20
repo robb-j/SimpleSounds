@@ -128,7 +128,7 @@
 		
 		
 		// Play Sound At the location of the emitter
-		[[SimpleSoundPlayer sharedPlayer] playEffect:@"Blaster" fromPosition:_emitter.position];
+		[[SimpleSoundPlayer sharedPlayer] playSound:@"Blaster" fromPosition:_emitter.position];
 	}
 	
 }

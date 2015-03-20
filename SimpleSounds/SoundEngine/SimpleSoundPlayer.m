@@ -246,24 +246,34 @@ static SimpleSoundPlayer *_sharedInstance;
 
 
 #pragma mark - Audio Interface
-- (void)playEffect:(NSString *)effectName volume:(float)volume {
+- (void)playSound:(NSString *)name {
 	
-	[self playSoundNamed:effectName volume:volume position:_target.position completion:nil];
+	[self playSound:name volume:1.0f];
 }
 
-- (void)playEffect:(NSString *)effectName volume:(float)volume completion:(SoundCallback)completion {
+- (void)playSound:(NSString *)name completion:(SoundCallback)completion {
 	
-	[self playSoundNamed:effectName volume:volume position:_target.position completion:completion];
+	[self playSound:name volume:1.0f completion:completion];
 }
 
-- (void)playEffect:(NSString *)effectName fromPosition:(CGPoint)position {
+- (void)playSound:(NSString *)name volume:(float)volume {
 	
-	[self playSoundNamed:effectName volume:1.0f position:position completion:nil];
+	[self playSoundNamed:name volume:volume position:_target.position completion:nil];
 }
 
-- (void)playEffect:(NSString *)effectName fromPosition:(CGPoint)position completion:(SoundCallback)completion {
+- (void)playSound:(NSString *)name volume:(float)volume completion:(SoundCallback)completion {
 	
-	[self playSoundNamed:effectName volume:1.0f position:position completion:completion];
+	[self playSoundNamed:name volume:volume position:_target.position completion:completion];
+}
+
+- (void)playSound:(NSString *)name fromPosition:(CGPoint)position {
+	
+	[self playSoundNamed:name volume:1.0f position:position completion:nil];
+}
+
+- (void)playSound:(NSString *)name fromPosition:(CGPoint)position completion:(SoundCallback)completion {
+	
+	[self playSoundNamed:name volume:1.0f position:position completion:completion];
 }
 
 - (void)playSoundNamed:(NSString *)name volume:(CGFloat)volume position:(CGPoint)position completion:(SoundCallback)completion {

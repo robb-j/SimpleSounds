@@ -37,27 +37,36 @@
 
 
 
-/** Play a sound with a gien volume
- @param effectName The identifier of the sound you want to play (the key from loadSounds:withCompletion's soundFiles 
- @param volume How load you want the sound to play, 0.0 to 1.0 */
-- (void)playEffect:(NSString *)effectName volume:(float)volume;
+/** Play a sound
+ @param name The identifier of the sound you want to play (the key from loadSounds:withCompletion's soundFiles */
+- (void)playSound:(NSString *)name;
+
+/** Play a sound
+ @param name The identifier of the sound you want to play (the key from loadSounds:withCompletion's soundFiles
+ @param completion A block that'll get called when the sound finished playing */
+- (void)playSound:(NSString *)name completion:(SoundCallback)completion;
 
 /** Play a sound with a gien volume
- @param effectName The identifier of the sound you want to play (the key from loadSounds:withCompletion's soundFiles 
+ @param name The identifier of the sound you want to play (the key from loadSounds:withCompletion's soundFiles 
+ @param volume How load you want the sound to play, 0.0 to 1.0 */
+- (void)playSound:(NSString *)name volume:(float)volume;
+
+/** Play a sound with a gien volume
+ @param name The identifier of the sound you want to play (the key from loadSounds:withCompletion's soundFiles 
  @param volume How load you want the sound to play, 0.0 to 1.0
  @param completion A block that'll get called when the sound finished playing */
-- (void)playEffect:(NSString *)effectName volume:(float)volume completion:(SoundCallback)completion;
+- (void)playSound:(NSString *)name volume:(float)volume completion:(SoundCallback)completion;
 
 /** Play a sound with a gien position
- @param effectName The identifier of the sound you want to play (the key from loadSounds:withCompletion's soundFiles 
+ @param name The identifier of the sound you want to play (the key from loadSounds:withCompletion's soundFiles 
  @param volume Where you want the sound to come from, relative to the target's parent */
-- (void)playEffect:(NSString *)effectName fromPosition:(CGPoint)position;
+- (void)playSound:(NSString *)name fromPosition:(CGPoint)position;
 
 /** Play a sound with a gien position
- @param effectName The identifier of the sound you want to play (the key from loadSounds:withCompletion's soundFiles 
+ @param name The identifier of the sound you want to play (the key from loadSounds:withCompletion's soundFiles 
  @param volume Where you want the sound to come from, relative to the target's parent
  @param completion A block that'll get called when the sound finished playing */
-- (void)playEffect:(NSString *)effectName fromPosition:(CGPoint)position completion:(SoundCallback)completion;
+- (void)playSound:(NSString *)name fromPosition:(CGPoint)position completion:(SoundCallback)completion;
 
 
 
