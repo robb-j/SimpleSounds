@@ -24,7 +24,7 @@
 }
 
 #pragma mark - Scene Lifecycle
--(void)didMoveToView:(SKView *)view {
+- (void)didMoveToView:(SKView *)view {
 	
 	_touchMoved = NO;
 	_loaded = NO;
@@ -86,6 +86,11 @@
 		
 		_loaded = YES;
 	}];
+}
+
+- (void)willMoveFromView:(SKView *)view {
+	
+	[[SimpleSoundPlayer sharedPlayer] cleanup];
 }
 
 

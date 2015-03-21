@@ -57,7 +57,7 @@ Next we need to tell SimpleSounds which SKNode is listening to sounds, so all po
 [[SimpleSoundPlayer sharedPlayer] setTarget:ship];
 ```
 
-Optionally you can tweek the audible range property. This is the distance, in points, that your target SKNode can hear. Sounds played beyond that distance will not be heard. This could be useful if your character got in a vehicle they might need to be able to hear further that when they were just on foot.
+Optionally you can tweek the audible range property. This is the distance, in points, that your target SKNode can hear. Sounds played beyond that distance will not be heard. This could be useful if your character got in a vehicle they might need to be able to hear further that when they were just on foot. This property can be changed at anytime and doesn't have to be at the start.
 
 ```objc
 [[SimpleSoundPlayer sharedPlayer] setAudibleRange:500.0f];
@@ -97,6 +97,28 @@ Sometimes you want to know when your sound has finished playing, for example if 
 [[SimpleSoundPlayer sharedPlayer] playSound:@"Blaster" fromPosition:CGPointMake(300, 200) completion:^{ ... }];
 ```
 
+### Stopping, Pausing & Resuming Sounds
+There are 3 simple methods to pause, resume & stop sounds. Stopping will terminate playback and rewind the sound back to the beginning, pausing will halt sounds and resuming will continue paused sounds where they left off. You can target specific sounds using tracks which will be covered below.
+
+```objc
+[[[SimpleSoundPlayer sharedPlayer] stopAllSounds];
+[[[SimpleSoundPlayer sharedPlayer] pauseAllSounds];
+[[[SimpleSoundPlayer sharedPlayer] resumeAllSounds];
+```
+
+### Cleaning Up
+There'll come a time when you no longer need to play sounds, when this happens you need to tell SimpleSounds to clean itself up. This is done easily with this one-liner:
+
+```objc
+[[SimpleSoundPlayer sharedPlayer] cleanup];
+```
+
+
+
+## Sound Files & Tracks
+[Coming Soon]
+
+
 
 ## Tips
-- A Tip
+- All the public functions of SimpleSoundPlayer have AppleDoc info, so you can do a 3 finger tap to learn about the function and its parameters.

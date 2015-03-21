@@ -60,6 +60,13 @@ typedef NS_ENUM(NSUInteger, SoundState) {
 #pragma mark - Sounds
 - (void)play {
 	
+	// If we can't play, first stop ourself
+	if (_state != SoundStateStopped) {
+		
+		[self stop];
+	}
+	
+	
 	// Only play if we're stopped
 	if (_state == SoundStateStopped) {
 		
