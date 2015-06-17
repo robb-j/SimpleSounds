@@ -24,3 +24,10 @@ typedef void(^LoadSoundCompletion)();
  * You can implement more by specifying the track when you create a SoundFile.
  @Warning track 0 is reserved for the SoundTrackAll constant which represents every track */
 typedef NSUInteger SoundTrack;
+
+
+/** How the sound player will cope with music being played */
+typedef NS_ENUM(NSUInteger, MusicInteractionType) {
+	MusicInteractionNoMusic,
+	MusicInteractionPlayBoth
+};

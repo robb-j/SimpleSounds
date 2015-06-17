@@ -15,6 +15,8 @@
 
 @import OpenAL.ALC;
 @import AVFoundation.AVAudioSession;
+@import MediaPlayer;
+@import UIKit;
 
 #define kMaxVolume 			1.0f
 #define kDefaultRange		300.0f
@@ -62,10 +64,12 @@ static SimpleSoundPlayer *_sharedInstance;
 		_audibleRange = kDefaultRange;
 		
 		
-		// Setup the Audio Session
-		NSError *error;
-		[[AVAudioSession sharedInstance] setActive:YES error:&error];
-		[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:&error];
+		// Listen for music player changes
+		//[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(musicPlayerChanged:) name:MPMusicPlayerControllerNowPlayingItemDidChangeNotification object:nil];
+		//[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appBecameActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
+		//[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
+		//[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillTerminate:) name:UIApplicationWillTerminateNotification object:nil];
+		
 	}
 	return self;
 }
@@ -98,6 +102,11 @@ static SimpleSoundPlayer *_sharedInstance;
 		NSLog(@"Warning: SimpleSoundPlayer is already loaded!");
 		return;
 	}
+	
+	
+	// Setup the Audio Session
+	[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
+	[[AVAudioSession sharedInstance] setActive:YES error:nil];
 	
 	
 	// Setup OpenAL
@@ -178,9 +187,33 @@ static SimpleSoundPlayer *_sharedInstance;
 	alcDestroyContext(_audioContext);
 	
 	
+	// Remove observations
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	
+	
 	// We are now un loaded
 	_isLoaded = NO;
 }
+
+
+#pragma mark - Music Player Management
+- (void)musicPlayerChanged:(NSNotification *)notif {
+	
+	NSLog(@"Changed: %@", notif.object);
+}
+
+- (void)appResignActive:(NSNotification *)notif {
+	
+}
+
+- (void)appBecameActive:(NSNotification *)notif {
+	
+}
+
+- (void)appWillTerminate:(NSNotification *)notif {
+	
+}
+
 
 
 #pragma mark - Listener Position

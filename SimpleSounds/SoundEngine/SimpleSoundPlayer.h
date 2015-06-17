@@ -103,4 +103,8 @@
 @property (nonatomic) double globalVolume;
 
 
+/** How the music player interacts with the device's music */
+//@property (nonatomic) MusicInteractionType musicInteraction;
+
+
 @end
