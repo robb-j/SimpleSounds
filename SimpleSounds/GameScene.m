@@ -21,6 +21,8 @@
 	
 	BOOL _touchMoved;
 	BOOL _loaded;
+	
+	StopLoopBlock _stopLoop;
 }
 
 #pragma mark - Scene Lifecycle
@@ -58,7 +60,7 @@
 	
 	
 	// Add the ship & emitter to the scene
-    [self addChild:_ship];
+	[self addChild:_ship];
 	[self addChild:_emitter];
 	
 	
@@ -78,6 +80,7 @@
 	// Create the sounds we want & give each an identifier (the key)
 	NSDictionary *sounds = @{
 		@"Blaster" : [SoundFile effectWithName:@"Blaster"],
+		@"Laser" : [SoundFile effectWithName:@"Laser"]
 	};
 	
 	
@@ -118,6 +121,18 @@
 			_ship.position = [touch locationInNode:self];
 		}
 	}
+	
+	/*
+	if (_stopLoop) {
+		
+		_stopLoop();
+		_stopLoop = nil;
+	}
+	else {
+		
+		_stopLoop = [[SimpleSoundPlayer sharedPlayer] playSound:@"Laser" loops:YES];
+	}
+	 */
 	
 	_touchMoved = NO;
 }

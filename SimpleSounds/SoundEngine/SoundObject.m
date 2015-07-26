@@ -27,6 +27,7 @@ typedef NS_ENUM(NSUInteger, SoundState) {
 	ALuint _source;
 	SoundCallback _callback;
 	SoundState _state;
+	BOOL _isLooping;
 }
 
 
@@ -46,6 +47,7 @@ typedef NS_ENUM(NSUInteger, SoundState) {
 		_source = source;
 		_duration = duration;
 		_state = SoundStateStopped;
+		_isLooping = NO;
 	}
 	return self;
 }
@@ -75,7 +77,10 @@ typedef NS_ENUM(NSUInteger, SoundState) {
 		
 		
 		// Call finished when done
-		[self performSelector:@selector(finished) withObject:nil afterDelay:_duration];
+		if ( ! _isLooping) {
+			
+			[self performSelector:@selector(finished) withObject:nil afterDelay:_duration];
+		}
 		
 		
 		// Update our state
@@ -129,8 +134,11 @@ typedef NS_ENUM(NSUInteger, SoundState) {
 		
 		
 		// Call `finished` when we actully finished (duration - time elapsed)
-		float elapsed; alGetSourcef(_source, AL_SEC_OFFSET, &elapsed);
-		[self performSelector:@selector(finished) withObject:nil afterDelay:_duration - elapsed];
+		if (!_isLooping) {
+			
+			float elapsed; alGetSourcef(_source, AL_SEC_OFFSET, &elapsed);
+			[self performSelector:@selector(finished) withObject:nil afterDelay:_duration - elapsed];
+		}
 		
 		
 		// Update our state
@@ -170,6 +178,26 @@ typedef NS_ENUM(NSUInteger, SoundState) {
 - (void)setVolume:(CGFloat)volume {
 	
 	alSourcef(_source, AL_GAIN, volume);
+}
+
+- (StopLoopBlock)setLooping:(BOOL)shouldLoop {
+	
+	alSourcei(_source, AL_LOOPING, shouldLoop ? AL_TRUE : AL_FALSE);
+	
+	_isLooping = shouldLoop;
+	
+	if (shouldLoop) {
+		
+		__weak SoundObject *weak = self;
+		
+		return ^{
+			
+			[weak stop];
+			[weak setLooping:false];
+		};
+	}
+	
+	return nil;
 }
 
 - (void)addCallback:(SoundCallback)callback {

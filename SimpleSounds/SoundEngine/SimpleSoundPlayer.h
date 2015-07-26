@@ -68,6 +68,12 @@
  @param completion A block that'll get called when the sound finished playing */
 - (void)playSound:(NSString *)name fromPosition:(CGPoint)position completion:(SoundCallback)completion;
 
+/** Play a sound with a set number of loops
+ @param name The identifier of the sound you want to play (the key from loadSounds:withCompletion's soundFiles 
+ @param loops How many times it should play, -1 to loop infinitly
+ @returns A block that if called will stop the sound looping
+ */
+- (StopLoopBlock)playSound:(NSString *)name loops:(NSInteger)numLoops;
 
 
 

@@ -55,6 +55,10 @@
 /** Add a callback for when thia sound finishes */
 - (void)addCallback:(SoundCallback)callback;
 
+/** Tell the sound how many times to loop, -1 for infinate loops */
+- (StopLoopBlock)setLooping:(BOOL)shouldLoop;
+
+
 
 
 

@@ -291,31 +291,36 @@ static SimpleSoundPlayer *_sharedInstance;
 
 - (void)playSound:(NSString *)name volume:(float)volume {
 	
-	[self playSoundNamed:name volume:volume position:_target.position completion:nil];
+	[self playSoundNamed:name volume:volume position:_target.position completion:nil loops:false];
 }
 
 - (void)playSound:(NSString *)name volume:(float)volume completion:(SoundCallback)completion {
 	
-	[self playSoundNamed:name volume:volume position:_target.position completion:completion];
+	[self playSoundNamed:name volume:volume position:_target.position completion:completion loops:false];
 }
 
 - (void)playSound:(NSString *)name fromPosition:(CGPoint)position {
 	
-	[self playSoundNamed:name volume:1.0f position:position completion:nil];
+	[self playSoundNamed:name volume:1.0f position:position completion:nil loops:false];
 }
 
 - (void)playSound:(NSString *)name fromPosition:(CGPoint)position completion:(SoundCallback)completion {
 	
-	[self playSoundNamed:name volume:1.0f position:position completion:completion];
+	[self playSoundNamed:name volume:1.0f position:position completion:completion loops:false];
 }
 
-- (void)playSoundNamed:(NSString *)name volume:(CGFloat)volume position:(CGPoint)position completion:(SoundCallback)completion {
+- (StopLoopBlock)playSound:(NSString *)name loops:(NSInteger)loops {
+	
+	return [self playSoundNamed:name volume:1.0 position:_target.position completion:nil loops:loops];
+}
+
+- (StopLoopBlock)playSoundNamed:(NSString *)name volume:(CGFloat)volume position:(CGPoint)position completion:(SoundCallback)completion loops:(BOOL)loops {
 	
 	// If we haven't loaded, inform the user
 	if ( ! _isLoaded) {
 		
 		NSLog(@"Warning: This player has not been loaded, remember to call loadSoundsWithCompletion:");
-		return;
+		return nil;
 	}
 	
 	
@@ -333,6 +338,7 @@ static SimpleSoundPlayer *_sharedInstance;
 		// Update the sound's properties
 		[sound setVolume:volume * _globalVolume];
 		[sound setPosition:position];
+		StopLoopBlock stopper = [sound setLooping:loops];
 		
 		
 		// If we have a callback, set that too
@@ -344,7 +350,11 @@ static SimpleSoundPlayer *_sharedInstance;
 		
 		// Finally play the sound
 		[sound play];
+		
+		return stopper;
 	}
+	
+	return nil;
 }
 
 

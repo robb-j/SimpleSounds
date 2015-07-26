@@ -19,6 +19,10 @@ typedef void(^SoundCallback)();
 typedef void(^LoadSoundCompletion)();
 
 
+/** A block to stop a looping sound */
+typedef void(^StopLoopBlock)();
+
+
 /** A number that represents a group of SoundFiles.
  * It is specified when you create a SoundFile, the default being SoundTrackEffect.
  * You can implement more by specifying the track when you create a SoundFile.
