@@ -31,10 +31,10 @@
 #pragma mark - Sound Lifecycle
 + (instancetype)effectWithName:(NSString *)name {
 	
-	return [[self alloc] initWithName:name extension:@"caf" instances:3 track:SoundTrackEffects];
+	return [[self alloc] initWithName:name ofType:@"caf" instances:3 track:SoundTrackEffects];
 }
 
-- (instancetype)initWithName:(NSString *)name extension:(NSString *)extension instances:(NSUInteger)instances track:(NSUInteger)track{
+- (instancetype)initWithName:(NSString *)name ofType:(NSString *)type instances:(NSUInteger)instances track:(NSUInteger)track {
 	
 	self = [super init];
 	
@@ -46,7 +46,7 @@
 		
 		
 		// See if the file exists
-		_url = [[NSBundle mainBundle] URLForResource:name withExtension:extension];
+		_url = [[NSBundle mainBundle] URLForResource:name withExtension:type];
 		
 		
 		// Find the duration of this sound file
@@ -57,7 +57,7 @@
 		// Error if
 		if ( ! _url) {
 			
-			[NSException raise:@"Failed to open audio file" format:@"File: %@.%@", name, extension];
+			[NSException raise:@"Failed to open audio file" format:@"File: %@.%@", name, type];
 		}
 		
 	}

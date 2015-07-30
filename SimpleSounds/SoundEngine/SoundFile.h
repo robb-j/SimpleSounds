@@ -39,7 +39,7 @@
  @param instances How many of this sound can be played at the same time
  @param track The group this sonud belongs to
  @Warning Will raise an exception if the file doesn't exist */
-- (instancetype)initWithName:(NSString *)name extension:(NSString *)extension instances:(NSUInteger)instances track:(NSUInteger)track;
+- (instancetype)initWithName:(NSString *)name ofType:(NSString *)type instances:(NSUInteger)instances track:(NSUInteger)track;
 
 
 
