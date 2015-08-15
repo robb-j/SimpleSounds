@@ -222,7 +222,7 @@ static SimpleSoundPlayer *_sharedInstance;
 	// Listen for the position of the target changing
 	if ([keyPath isEqualToString:@"position"] && object == _target) {
 		
-		[self setListenerPosition:[change[NSKeyValueChangeNewKey] CGPointValue]];
+		//[self setListenerPosition:[change[NSKeyValueChangeNewKey] CGPointValue]];
 	}
 }
 
@@ -240,7 +240,7 @@ static SimpleSoundPlayer *_sharedInstance;
 	if (_target) {
 		
 		// If we already have a target, stop listening to it
-		[_target removeObserver:self forKeyPath:@"position"];
+		//[_target removeObserver:self forKeyPath:@"position"];
 	}
 	
 	
@@ -251,7 +251,7 @@ static SimpleSoundPlayer *_sharedInstance;
 	if (_target) {
 		
 		// If we still have a target, listen for its position & update the listener
-		[target addObserver:self forKeyPath:@"position" options:NSKeyValueObservingOptionNew context:nil];
+		//[target addObserver:self forKeyPath:@"position" options:NSKeyValueObservingOptionNew context:nil];
 		[self setListenerPosition:target.position];
 	}
 	else {
@@ -337,7 +337,7 @@ static SimpleSoundPlayer *_sharedInstance;
 		
 		// Update the sound's properties
 		[sound setVolume:volume * _globalVolume];
-		[sound setPosition:position];
+		[sound setPosition: CGPointMake(position.x - _target.position.x, position.y - _target.position.y)];
 		StopLoopBlock stopper = [sound setLooping:loops];
 		
 		
