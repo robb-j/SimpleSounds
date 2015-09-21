@@ -13,7 +13,7 @@
 #import "SoundFile.h"
 #import "SoundObject.h"
 
-@import OpenAL.ALC;
+@import OpenAL.alc;
 @import AVFoundation.AVAudioSession;
 @import MediaPlayer;
 @import UIKit;

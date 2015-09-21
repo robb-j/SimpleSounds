@@ -7,7 +7,7 @@
 //
 
 @import Foundation;
-@import OpenAL.AL;
+@import OpenAL.al;
 
 @class SoundObject;
 

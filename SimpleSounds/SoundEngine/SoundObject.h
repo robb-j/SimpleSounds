@@ -8,7 +8,7 @@
 
 @import Foundation;
 @import CoreGraphics.CGGeometry;
-@import OpenAL.AL;
+@import OpenAL.al;
 
 #import "SimpleSoundTypes.h"
 
