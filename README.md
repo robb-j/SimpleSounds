@@ -3,6 +3,8 @@
 - robb-j
 - March 2015
 
+> **Archived** – This project has been archived and is generally unsupported
+
 ## Features
 - Play positional sounds, relative to an SKNode
 - Sounds don't cancel out iPod music
